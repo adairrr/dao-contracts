@@ -32,6 +32,7 @@ impl InstantiateMsg {
 
 
 #[cw_serde]
+#[cfg_attr(feature = "boot", derive(boot_core::ExecuteFns))]
 pub enum ExecuteMsg {
     /// Buy will attempt to purchase as many supply tokens as possible.
     /// You must send only reserve tokens in that message
@@ -42,6 +43,7 @@ pub enum ExecuteMsg {
 
 #[cw_serde]
 #[derive(QueryResponses)]
+#[cfg_attr(feature = "boot", derive(boot_core::QueryFns))]
 pub enum QueryMsg {
     /// Returns the reserve and supply quantities, as well as the spot price to buy 1 token
     #[returns(CurveInfoResponse)]
