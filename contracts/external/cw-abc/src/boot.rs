@@ -1,6 +1,7 @@
 use crate::msg::*;
 use boot_core::{ArtifactsDir, ContractWrapper, Daemon, Mock, TxHandler, Uploadable, WasmPath};
 use boot_core::{contract, Contract, CwEnv};
+use cosmwasm_std::Empty;
 
 #[contract(InstantiateMsg, ExecuteMsg, QueryMsg, Empty)]
 pub struct CwAbc<Chain>;
